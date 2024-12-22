@@ -1,10 +1,11 @@
-import Advertisments from "./components/advertisements";
+import Advertisements from "./components/advertisements";
+import Search from "./components/search";
 
 export default function Home() {
     return(
         <div>
-          <h1>a</h1>
-          <Advertisments></Advertisments>
+          <Advertisements></Advertisements>
+          <Search></Search>
         </div>
     )
 }
