@@ -2,7 +2,17 @@ import { useRef, useState } from 'react';
 
 interface DropdownProps {
   title: string;
-  list: string[];
+  list: ListInDropdownProps[];
+}
+
+interface ListInDropdownProps {
+  value: string;
+  img: ImgProps | undefined;
+}
+
+interface ImgProps {
+  src : string;
+  date : string;
 }
 
 const Dropdown: React.FC<DropdownProps> = ({ title, list }) => {
@@ -52,11 +62,21 @@ const Dropdown: React.FC<DropdownProps> = ({ title, list }) => {
               className="px-4 py-2.5 w-full rounded text-gray-800 text-sm border-none outline-blue-600 bg-blue-50 focus:bg-transparent"
             />
           </li>
-               {list.map((item, index) => (
-                <li key={index} className="py-2.5 px-4 hover:bg-blue-50 text-black text-sm cursor-pointer rounded">
-                    {item}
-                </li>
-          ))}
+      <div className="flex flex-wrap max-w-xl">
+           {list.map((item, index) => (
+            item.img ? (
+            <li key={index} className="py-2.5 px-4 hover:bg-blue-50 text-black text-sm cursor-pointer rounded w-1/3">
+                <img src={item.img.src}  className="w-32 h-52" />
+                {item.img.date}
+                {item.value}
+            </li>
+            ) : (
+            <li key={index} className="py-2.5 px-4 hover:bg-blue-50 text-black text-sm cursor-pointer rounded w-1/2">
+                {item.value}
+            </li>
+            )
+      ))}
+      </div>
 
         </ul>
       </div>
