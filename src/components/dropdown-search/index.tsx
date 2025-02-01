@@ -15,7 +15,7 @@ interface ImgProps {
   date : string;
 }
 
-const Dropdown: React.FC<DropdownProps> = ({ title, list }) => {
+const DropdownSearch: React.FC<DropdownProps> = ({ title, list }) => {
     const dropdownToggleRef = useRef<HTMLButtonElement | null>(null);
   const dropdownMenuRef = useRef<HTMLUListElement | null>(null);
 
@@ -42,11 +42,11 @@ const Dropdown: React.FC<DropdownProps> = ({ title, list }) => {
 
   return (
     
-      <div className="relative w-max mx-auto px-16 ">
+      <div className="relative mx-auto px-6 ">
         <button
           type="button"
           ref={dropdownToggleRef}
-          className="px-5 py-2.5 rounded text-black text-sm tracking-wide border-none outline-none bg-white"
+          className="px-5 py-2.5 rounded text-black text-sm tracking-wide border-none outline-none bg-white font-semibold"
           onClick={handleClick}
         >
           {title}
@@ -65,10 +65,10 @@ const Dropdown: React.FC<DropdownProps> = ({ title, list }) => {
       <div className="flex flex-wrap max-w-xl">
            {list.map((item, index) => (
             item.img ? (
-            <li key={index} className="py-2.5 px-4 hover:bg-blue-50 text-black text-sm cursor-pointer rounded w-1/3">
+            <li key={index} className="py-2.5 px-4 hover:bg-blue-50 text-black text-xs cursor-pointer rounded w-1/3 flex flex-col items-center">
                 <img src={item.img.src}  className="w-32 h-52" />
-                {item.img.date}
-                {item.value}
+                <div className="text-blue-700">วันที่เข้าฉาย: {item.img.date}</div>
+                <div className="font-semibold text-sm text-gray-900">{item.value}</div>
             </li>
             ) : (
             <li key={index} className="py-2.5 px-4 hover:bg-blue-50 text-black text-sm cursor-pointer rounded w-1/2">
@@ -85,4 +85,4 @@ const Dropdown: React.FC<DropdownProps> = ({ title, list }) => {
 
 
 
-export default Dropdown;
+export default DropdownSearch;
