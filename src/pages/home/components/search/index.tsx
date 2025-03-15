@@ -10,35 +10,53 @@ import HP7Poster from "../../../../assets/pictures/movies/harry 7.0.jpg"
 import HP75Poster from "../../../../assets/pictures/movies/harry 7.5.jpg"
 import Mufasa from "../../../../assets/pictures/movies/mufasa poster.jpg"
 export default function Search() {
-  const dropdownToggleRef = useRef<HTMLButtonElement | null>(null);
-  const dropdownMenuRef = useRef<HTMLUListElement | null>(null);
+  const dropdownCinemaToggleRef = useRef<HTMLButtonElement | null>(null);
+  const dropdownCinemaMenuRef = useRef<HTMLUListElement | null>(null);
+  const dropdownMovieToggleRef = useRef<HTMLButtonElement | null>(null);
+  const dropdownMovieMenuRef = useRef<HTMLUListElement | null>(null);
 
   
-  function handleClick() {
-    const dropdownToggle = dropdownToggleRef.current
-    const dropdownMenu = dropdownMenuRef.current
-      if (dropdownMenu?.className.includes('hidden')) {
-        dropdownMenu?.classList.add('block')
-        dropdownMenu?.classList.remove('hidden')
-        dropdownToggle?.classList.add('text-blue-600')
-        dropdownToggle?.classList.remove('text-black')
+  function handleCinemaClick() {
+    const dropdownCinemaToggle = dropdownCinemaToggleRef.current
+    const dropdownCinemaMenu = dropdownCinemaMenuRef.current
+      if (dropdownCinemaMenu?.className.includes('hidden')) {
+        dropdownCinemaMenu?.classList.add('block')
+        dropdownCinemaMenu?.classList.remove('hidden')
+        dropdownCinemaToggle?.classList.add('text-blue-600')
+        dropdownCinemaToggle?.classList.remove('text-black')
       } else {
-          dropdownMenu?.classList.add('hidden')
-          dropdownMenu?.classList.remove('block')
-          dropdownToggle?.classList.add('text-black')
-          dropdownToggle?.classList.remove('text-blue-600')
+          dropdownCinemaMenu?.classList.add('hidden')
+          dropdownCinemaMenu?.classList.remove('block')
+          dropdownCinemaToggle?.classList.add('text-black')
+          dropdownCinemaToggle?.classList.remove('text-blue-600')
+      }
+  }
+
+  function handleMovieClick() {
+    const dropdownMovieToggle = dropdownMovieToggleRef.current
+    const dropdownMovieMenu = dropdownMovieMenuRef.current
+      if (dropdownMovieMenu?.className.includes('hidden')) {
+        dropdownMovieMenu?.classList.add('block')
+        dropdownMovieMenu?.classList.remove('hidden')
+        dropdownMovieToggle?.classList.add('text-blue-600')
+        dropdownMovieToggle?.classList.remove('text-black')
+      } else {
+          dropdownMovieMenu?.classList.add('hidden')
+          dropdownMovieMenu?.classList.remove('block')
+          dropdownMovieToggle?.classList.add('text-black')
+          dropdownMovieToggle?.classList.remove('text-blue-600')
       }
   }
   
     return <div className=" shadow-md h-32 mx-60 rounded-md flex items-center">
       <div className="relative w-max mx-auto">
-      <button type="button" id="dropdownToggle" onClick={handleClick} ref={dropdownToggleRef}
+      <button type="button" id="dropdownCinemaToggle" onClick={handleCinemaClick} ref={dropdownCinemaToggleRef}
         className="px-5 py-2.5 rounded text-black text-sm font-semibold tracking-wide border-none outline-none bg-white flex items-center">
         เลือกโรงภาพยนตร์
         <img src={dropdownIcon} alt="logo" className='w-9 ' />
       </button>
-
-      <ul id="dropdownMenu" ref={dropdownMenuRef} className='absolute hidden shadow-lg bg-white py-2 px-2 z-[1000] min-w-full w-max rounded max-h-96 overflow-auto'>
+      <hr className='border-2'></hr>
+      <ul id="dropdownCinemaMenu" ref={dropdownCinemaMenuRef} className='absolute hidden shadow-lg bg-white py-2 px-2 z-[1000] min-w-full w-max rounded max-h-96 overflow-auto'>
         <li className="mb-2">
           <input placeholder="Search here"
             className="px-4 py-2.5 w-full rounded text-gray-800 text-sm border-none outline-blue-600 bg-blue-50 focus:bg-transparent" />
@@ -50,13 +68,14 @@ export default function Search() {
       </ul>
     </div>
     <div className="relative w-max mx-auto">
-      <button type="button" id="dropdownToggle" onClick={handleClick} ref={dropdownToggleRef}
+      <button type="button" id="dropdownMovieToggle" onClick={handleMovieClick} ref={dropdownMovieToggleRef}
         className="px-5 py-2.5 rounded text-black text-sm font-semibold tracking-wide border-none outline-none bg-white flex items-center">
         เลือกภาพยนตร์
         <img src={dropdownIcon} alt="logo" className='w-9 ' />
       </button>
+      <hr className='border-2'></hr>
 
-      <ul id="dropdownMenu" ref={dropdownMenuRef} className='absolute hidden shadow-lg bg-white py-2 px-2 z-[1000] min-w-full w-max rounded max-h-96 overflow-auto'>
+      <ul id="dropdownMovieMenu" ref={dropdownMovieMenuRef} className='absolute hidden shadow-lg bg-white py-2 px-2 z-[1000] min-w-full w-max rounded max-h-96 overflow-auto'>
         <div className='flex flex-wrap'>
           <li className='cursor-pointer px-4 hover:bg-blue-50'>
             <img className='h-44 w-32' src={HP1Poster}></img>
@@ -111,6 +130,12 @@ export default function Search() {
         </li>
         </div>
       </ul>
+    </div>
+    <div className="relative w-max mx-auto">
+      <button type="button" 
+        className="px-14 py-4 rounded text-white text-sm font-semibold tracking-wide border-none outline-none bg-gradient-to-r from-blue-700 to-sky-400 flex items-center hover:shadow-sky-200 hover:shadow-xl">
+        รอบฉาย
+      </button>
     </div>
       
 
