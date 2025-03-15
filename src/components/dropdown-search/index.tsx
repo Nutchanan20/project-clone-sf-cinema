@@ -31,7 +31,7 @@ const DropdownSearch: React.FC<DropdownProps> = ({ title, list }) => {
         dropdownMenu?.classList.remove('hidden');
         dropdownToggle?.classList.remove('text-black');
         dropdownToggle?.classList.add('text-blue-800');
-      } else {
+      } else if (dropdownMenu?.className.includes('block')) {
         dropdownMenu?.classList.add('hidden');
         dropdownMenu?.classList.remove('block');
         dropdownToggle?.classList.add('text-black');
@@ -42,7 +42,7 @@ const DropdownSearch: React.FC<DropdownProps> = ({ title, list }) => {
 
   return (
     
-      <div className="relative mx-auto px-6 ">
+      <div className="relative mx-auto">
         <button
           type="button"
           ref={dropdownToggleRef}
