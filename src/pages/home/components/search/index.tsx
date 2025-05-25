@@ -15,7 +15,54 @@ export default function Search() {
   const dropdownMovieToggleRef = useRef<HTMLButtonElement | null>(null);
   const dropdownMovieMenuRef = useRef<HTMLUListElement | null>(null);
 
-  
+  const movies = [
+    {
+      poster: HP1Poster, 
+      date: "01-01-2024",
+      title: "HarryPotter 1"
+    },
+    {
+      poster: HP2Poster, 
+      date: "02-02-2024",
+      title: "HarryPotter 2"
+    },
+    {
+      poster: HP3Poster, 
+      date: "03-03-2024",
+      title: "HarryPotter 3"
+    },
+    {
+      poster: HP4Poster, 
+      date: "04-04-2024",
+      title: "HarryPotter 4"
+    },
+    {
+      poster: HP5Poster, 
+      date: "05-05-2024",
+      title: "HarryPotter 5"
+    },
+    {
+      poster: HP6Poster, 
+      date: "06-06-2024",
+      title: "HarryPotter 6"
+    },
+    {
+      poster: HP7Poster, 
+      date: "07-07-2024",
+      title: "HarryPotter 7"
+    },
+    {
+      poster: HP75Poster, 
+      date: "08-08-2024",
+      title: "HarryPotter 7.5"
+    },
+    {
+      poster: Mufasa, 
+      date: "09-09-2024",
+      title: "Mufasa"
+    }
+  ]
+
   function handleCinemaClick() {
     const dropdownCinemaToggle = dropdownCinemaToggleRef.current
     const dropdownCinemaMenu = dropdownCinemaMenuRef.current
@@ -76,58 +123,15 @@ export default function Search() {
       <hr className='border-2'></hr>
 
       <ul id="dropdownMovieMenu" ref={dropdownMovieMenuRef} className='absolute hidden shadow-lg bg-white py-2 px-2 z-[1000] min-w-full w-max rounded max-h-96 overflow-auto'>
-        <div className='flex flex-wrap'>
-          <li className='cursor-pointer px-4 hover:bg-blue-50'>
-            <img className='h-44 w-32' src={HP1Poster}></img>
-            <div className='text-blue-900 text-xs'>วันที่เข้าฉาย: 01-01-2024</div>
-            <div className='font-semibold text-sm text-gray-950'>HarryPotter 1</div>
+        <div className='flex flex-wrap w-1/3'>
+          {movies.map((movie,index) => (
+          <li key={index} className='cursor-pointer px-4 pt-3 hover:bg-blue-50'>
+            <img className='h-44 w-32' src={movie.poster}></img>
+            <div className='text-blue-900 text-xs'>วันที่เข้าฉาย: {movie.date}</div>
+            <div className='font-semibold text-sm text-gray-950'>{movie.title}</div>
           </li>
-          <li className='cursor-pointer px-4 hover:bg-blue-50'>
-            <img className='h-44 w-32'src={HP2Poster}></img>
-            <div className='text-blue-900 text-xs'>วันที่เข้าฉาย: 02-02-2024</div>
-            <div className='font-semibold text-sm text-gray-950'>HarryPotter 2</div>
-            </li>
-          <li className='cursor-pointer px-4 hover:bg-blue-50'>
-            <img className='h-44 w-32'src={HP3Poster}></img>
-            <div className='text-blue-900 text-xs'>วันที่เข้าฉาย: 03-03-2024</div>
-            <div className='font-semibold text-sm text-gray-950'>HarryPotter 3</div>
-          </li>
-        </div>
-
-        <div className='flex flex-wrap pt-3'>
-          <li className='cursor-pointer px-4 hover:bg-blue-50'>
-            <img className='h-44 w-32'src={HP4Poster}></img>
-            <div className='text-blue-900 text-xs'>วันที่เข้าฉาย: 04-04-2024</div>
-            <div className='font-semibold text-sm text-gray-950'>HarryPotter 4</div>
-          </li>
-          <li className='cursor-pointer px-4 hover:bg-blue-50'>
-            <img className='h-44 w-32'src={HP5Poster}></img>
-            <div className='text-blue-900 text-xs'>วันที่เข้าฉาย: 05-05-2024</div>
-            <div className='font-semibold text-sm text-gray-950'>HarryPotter 5</div>
-          </li>
-          <li className='cursor-pointer px-4 hover:bg-blue-50'>
-            <img className='h-44 w-32'src={HP6Poster}></img>
-            <div className='text-blue-900 text-xs'>วันที่เข้าฉาย: 06-06-2024</div>
-            <div className='font-semibold text-sm text-gray-950'>HarryPotter 6</div>
-          </li>
-        </div>
-
-        <div className='flex flex-wrap pt-3'>
-        <li className='cursor-pointer px-4 hover:bg-blue-50'>
-          <img className='h-44 w-32'src={HP7Poster}></img>
-          <div className='text-blue-900 text-xs'>วันที่เข้าฉาย: 07-07-2024</div>
-          <div className='font-semibold text-sm text-gray-950'>HarryPotter 7</div>
-        </li>
-        <li className='cursor-pointer px-4 hover:bg-blue-50'>
-          <img className='h-44 w-32'src={HP75Poster}></img>
-          <div className='text-blue-900 text-xs'>วันที่เข้าฉาย: 08-08-2024</div>
-          <div className='font-semibold text-sm text-gray-950'>HarryPotter 7.5</div>
-        </li>
-        <li className='cursor-pointer px-4 hover:bg-blue-50'>
-          <img className='h-44 w-32'src={Mufasa}></img>
-          <div className='text-blue-900 text-xs'>วันที่เข้าฉาย: 09-09-2024</div>
-          <div className='font-semibold text-sm text-gray-950'>Mufasa</div>
-        </li>
+          ))}
+          
         </div>
       </ul>
     </div>
