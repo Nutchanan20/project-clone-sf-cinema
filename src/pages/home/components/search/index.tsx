@@ -95,7 +95,7 @@ export default function Search() {
       }
   }
   
-    return <div className=" shadow-md h-32 mx-60 rounded-md flex items-center">
+    return <div className=" shadow-md h-32 mx-60 rounded-md flex items-center border border-gray-200">
       <div className="relative w-max mx-auto">
       <button type="button" id="dropdownCinemaToggle" onClick={handleCinemaClick} ref={dropdownCinemaToggleRef}
         className="px-5 py-2.5 rounded text-black text-sm font-semibold tracking-wide border-none outline-none bg-white flex items-center">

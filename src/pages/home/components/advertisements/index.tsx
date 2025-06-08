@@ -1,6 +1,8 @@
 import photo1 from "./pictures/cinema ad.jpg"
 export default function Advertisments() {
     return(
-        <img src={photo1} className="w-full"></img>
+        <div className="flex justify-center">
+            <img src={photo1} className="w-[1200px]"></img>
+        </div>
     )
 }
