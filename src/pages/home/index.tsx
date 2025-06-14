@@ -8,10 +8,10 @@ export default function Home() {
           <div>
             <Advertisements></Advertisements>
           </div>
-          <div className="mt-11">
+          <div className="mt-11 ">
             <Search></Search>
           </div>
-          <div className="mt-11">
+          <div className="mt-11 w-[65%] mx-auto">
           <Movie></Movie>
           </div>
         </div>

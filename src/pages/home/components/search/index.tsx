@@ -95,7 +95,7 @@ export default function Search() {
       }
   }
   
-    return <div className=" shadow-md h-32 mx-60 rounded-md flex items-center border border-gray-200">
+    return <div className=" shadow-md h-32 mx-60 rounded-md flex items-center border border-gray-200 bg-white">
       <div className="relative w-max mx-auto">
       <button type="button" id="dropdownCinemaToggle" onClick={handleCinemaClick} ref={dropdownCinemaToggleRef}
         className="px-5 py-2.5 rounded text-black text-sm font-semibold tracking-wide border-none outline-none bg-white flex items-center">
@@ -108,10 +108,10 @@ export default function Search() {
           <input placeholder="Search here"
             className="px-4 py-2.5 w-full rounded text-gray-800 text-sm border-none outline-blue-600 bg-blue-50 focus:bg-transparent" />
         </li>
-        <li className='py-2.5 px-4 hover:text-blue-500 text-black text-sm cursor-pointer rounded'>Dropdown option</li>
-        <li className='py-2.5 px-4 hover:text-blue-500 text-black text-sm cursor-pointer rounded'>Cloth set</li>
-        <li className='py-2.5 px-4 hover:text-blue-500 text-black text-sm cursor-pointer rounded'>Sales details</li>
-        <li className='py-2.5 px-4 hover:text-blue-500 text-black text-sm cursor-pointer rounded'>Marketing</li>
+        <li className='py-2.5 px-4 hover:text-blue-500 text-black text-sm cursor-pointer rounded'>Central World</li>
+        <li className='py-2.5 px-4 hover:text-blue-500 text-black text-sm cursor-pointer rounded'>Central Ladprao</li>
+        <li className='py-2.5 px-4 hover:text-blue-500 text-black text-sm cursor-pointer rounded'>Central Chaengwattana</li>
+        <li className='py-2.5 px-4 hover:text-blue-500 text-black text-sm cursor-pointer rounded'>MBK</li>
       </ul>
     </div>
     <div className="relative w-max mx-auto">
@@ -123,7 +123,7 @@ export default function Search() {
       <hr className='border-2'></hr>
 
       <ul id="dropdownMovieMenu" ref={dropdownMovieMenuRef} className='absolute hidden shadow-lg bg-white py-2 px-2 z-[1000] min-w-full w-max rounded max-h-96 overflow-auto'>
-        <div className='flex flex-wrap w-1/3'>
+        <div className="grid grid-cols-3 justify-items-center">
           {movies.map((movie,index) => (
           <li key={index} className='cursor-pointer px-4 pt-3 hover:bg-blue-50'>
             <img className='h-44 w-32' src={movie.poster}></img>
