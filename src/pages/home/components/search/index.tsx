@@ -95,7 +95,7 @@ export default function Search() {
       }
   }
   
-    return <div className=" shadow-md h-32 mx-60 rounded-md flex items-center border border-gray-200">
+    return <div className=" shadow-md h-32 w-[50%] mx-auto rounded-md flex items-center border border-gray-200 bg-white">
       <div className="relative w-max mx-auto">
       <button type="button" id="dropdownCinemaToggle" onClick={handleCinemaClick} ref={dropdownCinemaToggleRef}
         className="px-5 py-2.5 rounded text-black text-sm font-semibold tracking-wide border-none outline-none bg-white flex items-center">
@@ -123,7 +123,7 @@ export default function Search() {
       <hr className='border-2'></hr>
 
       <ul id="dropdownMovieMenu" ref={dropdownMovieMenuRef} className='absolute hidden shadow-lg bg-white py-2 px-2 z-[1000] min-w-full w-max rounded max-h-96 overflow-auto'>
-        <div className='flex flex-wrap w-1/3'>
+        <div className='grid grid-cols-3 justify-items-center gap-y-10'>
           {movies.map((movie,index) => (
           <li key={index} className='cursor-pointer px-4 pt-3 hover:bg-blue-50'>
             <img className='h-44 w-32' src={movie.poster}></img>

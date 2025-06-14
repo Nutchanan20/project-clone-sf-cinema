@@ -10,7 +10,9 @@ export default function App() {
   <div>
   <TopHeader></TopHeader>
   <Navbar></Navbar>
+  <div className="bg-[#f5f7fb]">
   <Home></Home>
+  </div>
   </div>
 )
 }

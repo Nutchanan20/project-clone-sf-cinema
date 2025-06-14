@@ -60,7 +60,7 @@ export default function Movie() {
         <h1 className="text-center font-bold text-2xl text-[#2d64cf]">ภาพยนตร์</h1>
         <div className="flex justify-center mt-10">
             {categories.map((category,index) => (
-                <button className="text-[#2d64cf] focus:text-black group relative inline-block pb-1 font-bold mx-10">{category}
+                <button className="text-[#989898] focus:text-black group relative inline-block pb-1 font-bold mx-10">{category}
                 <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#2d64cf] transform scale-x-0 transition-transform duration-300 origin-left group-hover:scale-x-100 group-focus:scale-x-100"></span>
                 </button>
             ))}
@@ -69,25 +69,43 @@ export default function Movie() {
         
         <hr className="mx-32 bg-[#c6c7c7]"></hr>
 
-        <div className="mt-16 flex justify-center">
-            <div className="w-2/3">
-                <div className="grid grid-cols-3 justify-items-center">
-                    {movies.map((movie,index) => (
-                    <div key={index} className='cursor-pointer px-4 pt-3 hover:bg-blue-50'>
-                        <img className='h-44 w-32' src={movie.poster}></img>
-                        <div className='text-blue-900 text-xs'>วันที่เข้าฉาย: {movie.date}</div>
-                        <div className='font-semibold text-sm text-gray-950'>{movie.title}</div>
-                    </div>
-                    ))}
-                </div>
+        <div className="mt-9 flex justify-center">
+            <div className="w-2/3 mr-8">
+            <div className="grid grid-cols-3 justify-items-center gap-y-8">
+              {movies.map((movie, index) => (
+          <div
+            key={index}
+            className="bg-white shadow-md flex flex-col items-center px-4 pt-3 pb-6 relative hover:shadow-lg transition  mt-[85px]"
+          >
+            
+            <img
+              className="h-[318px] w-[215px] object-cover mt-[-85px]"
+              src={movie.poster}
+              alt={movie.title}
+            />
+            <div className=" left-0 right-0 flex justify-center">
+                <span className="bg-gradient-to-r from-[#790000] to-[#a22428] text-white text-sm font-medium w-[215px] h-6 flex items-center justify-center">
+                ADVANCE TICKET
+                </span>
+            </div>
+            <div className="text-blue-900 text-xs mt-4 mb-1">
+              วันที่เข้าฉาย: {movie.date}
+            </div>
+            <div className="font-bold text-base text-center text-black">
+              {movie.title}
+            </div>
+          </div>
+              ))}
+          </div>
+
             </div>
 
             <div className="w-1/3">
-                <div className="bg-white rounded-xl shadow-md p-6 mb-6">
-                    <h2 className="font-bold text-lg mb-4 text-[#2d64cf]">โฆษณา</h2>
-                    {/* ตัวอย่างโฆษณา */}
+          <div className="bg-white rounded-xl shadow-md p-6 mb-6">
+              <h2 className="font-bold text-lg mb-4 text-[#2d64cf]">โฆษณา</h2>
+              {/* ตัวอย่างโฆษณา */}
              
-                </div>
+          </div>
             </div>
         </div>
 
