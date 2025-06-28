@@ -7,6 +7,7 @@ import HP6Poster from "../../../../assets/pictures/movies/harry 6.jpg"
 import HP7Poster from "../../../../assets/pictures/movies/harry 7.0.jpg"
 import HP75Poster from "../../../../assets/pictures/movies/harry 7.5.jpg"
 import Mufasa from "../../../../assets/pictures/movies/mufasa poster.jpg"
+import F1 from "../../../../assets/pictures/movies/F1.jpg"
 export default function Movie() {
     const categories = ["กำลังฉาย","โปรแกรมหน้า", "กิจกรรมพิเศษ"]
     const movies = [
@@ -70,11 +71,11 @@ export default function Movie() {
         <hr className="mx-4 bg-[#c6c7c7]"></hr>
 
         <div className="mt-8 flex justify-center">
-            <div className="w-2/3">
+            <div>
                 <div className="grid grid-cols-3 justify-items-center">
                     {movies.map((movie,index) => (
-                    <div key={index} className='cursor-pointer px-4 pt-3 hover:shadow-lg shadow-md bg-white mr-4 mb-7 relative mt-[85px]'>
-                        <img className='h-[200px] w-[180px] object-cover mt-[-85px]' src={movie.poster}></img>
+                    <div key={index} className='cursor-pointer px-4 pt-3 hover:shadow-lg shadow-md bg-white mr-6 mb-7 relative mt-[85px]'>
+                        <img className='h-[250px] w-[200px] object-cover mt-[-85px]' src={movie.poster}></img>
                         <div className="bg-gradient-to-r from-[#790000] to-[#a22428] text-white text-xs text-center">ADVANCE TICKET</div>
                         <div className='text-blue-900 text-xs my-2 text-center'>วันที่เข้าฉาย: {movie.date}</div>
                         <div className='font-semibold text-sm text-gray-950 text-center mb-2'>{movie.title}</div>
@@ -83,12 +84,11 @@ export default function Movie() {
                 </div>
             </div>
 
-            <div className="w-1/3">
-                <div className="bg-white rounded-xl shadow-md p-6 mb-6">
-                    <h2 className="font-bold text-lg mb-4 text-[#2d64cf]">โฆษณา</h2>
-                    {/* ตัวอย่างโฆษณา */}
-             
-                </div>
+            <div>
+                    <img className="w-60 h-max mt-3" src={F1}></img>
+                    <hr className="bg-gradient-to-r from-[#2f66cd] to-[#5ab6de] mt-9 h-[4.5px]"></hr>
+                    <h1 className="mt-4 text-2xl text-center font-black text-[#333333]">Box Office</h1>
+
             </div>
         </div>
 
