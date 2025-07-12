@@ -57,6 +57,29 @@ export default function Movie() {
       title: "Mufasa",
     },
   ];
+  const boxOfficeMovies = [
+    {
+      poster: Mufasa,
+      title: "จูราสสิค เวิลด์",
+    },
+    {
+      poster: F1,
+      title: "F1 เดอะ มูฟวี่",
+    },
+    {
+      poster: HP3Poster,
+      title: "อภินิหารไวกิ้งพิชิตมังกร",
+    },
+    {
+      poster: HP4Poster,
+      title: "28 ปีหลัง เชื้อเขมือบคน",
+    },
+    {
+      poster: HP75Poster,
+      title: "แมแกน 2.0",
+    },
+  ];
+
   return (
     <div>
       <h1 className="text-center font-bold text-2xl text-[#2d64cf]">
@@ -105,7 +128,36 @@ export default function Movie() {
         <div>
           <img className="w-[255px] mt-3" src={F1} />
           <hr className="bg-gradient-to-r from-[#2f66cd] to-[#5ab6de] mt-5 h-1"></hr>
-          <h1 className="text-center font-black text-2xl text-[#333333] mt-5"> Box Office</h1>
+          <h1 className="text-center font-black text-2xl text-[#333333] mt-5">
+            {" "}
+            Box Office
+          </h1>
+          <div className="flex justify-center mt-5 space-x-4">
+            <button className="text-[#989898] focus:text-[#2d64cf] hover:text-[#2d64cf] font-bold text-sm">
+              SF Box Office
+            </button>
+            <div className="text-[#989898]">|</div>
+            <button className="text-[#989898] focus:text-[#2d64cf] hover:text-[#2d64cf] font-bold text-sm">
+              US Box Office
+            </button>
+          </div>
+          {boxOfficeMovies.map((movie, idx) => (
+            <div key={idx} className="flex items-center mb-6">
+              <div className="relative">
+                <img
+                  src={movie.poster}
+                  alt={movie.title}
+                  className="w-[90px] h-[126px] object-cover rounded bg-white border border-gray-200"
+                />
+                <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-[#2f66cd] flex items-center justify-center text-white font-bold shadow text-lg">
+                  {idx + 1}
+                </div>
+              </div>
+              <div className="text-sm font-semibold text-[#333333] ml-4 leading-5">
+                {movie.title}
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
