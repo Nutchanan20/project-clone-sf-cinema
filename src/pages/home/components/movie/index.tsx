@@ -8,6 +8,12 @@ import HP7Poster from "../../../../assets/pictures/movies/harry 7.0.jpg";
 import HP75Poster from "../../../../assets/pictures/movies/harry 7.5.jpg";
 import Mufasa from "../../../../assets/pictures/movies/mufasa poster.jpg";
 import F1 from "../../../../assets/pictures/movies/f1.jpg";
+import movie1 from "../../../../assets/pictures/movies/range/1movie.jpg";
+import movie2 from "../../../../assets/pictures/movies/range/2movie.jpg";
+import movie3 from "../../../../assets/pictures/movies/range/3movie.jpg";
+import movie4 from "../../../../assets/pictures/movies/range/4movie.jpg";
+import movie5 from "../../../../assets/pictures/movies/range/5movie.jpg";
+
 export default function Movie() {
   const categories = ["กำลังฉาย", "โปรแกรมหน้า", "กิจกรรมพิเศษ"];
   const movies = [
@@ -59,23 +65,23 @@ export default function Movie() {
   ];
   const boxOfficeMovies = [
     {
-      poster: Mufasa,
+      poster: movie1,
       title: "จูราสสิค เวิลด์",
     },
     {
-      poster: F1,
+      poster: movie2,
       title: "F1 เดอะ มูฟวี่",
     },
     {
-      poster: HP3Poster,
+      poster: movie3,
       title: "อภินิหารไวกิ้งพิชิตมังกร",
     },
     {
-      poster: HP4Poster,
+      poster: movie4,
       title: "28 ปีหลัง เชื้อเขมือบคน",
     },
     {
-      poster: HP75Poster,
+      poster: movie5,
       title: "แมแกน 2.0",
     },
   ];
@@ -141,23 +147,27 @@ export default function Movie() {
               US Box Office
             </button>
           </div>
+          <div className="border border-gray-200">
           {boxOfficeMovies.map((movie, idx) => (
-            <div key={idx} className="flex items-center mb-6">
-              <div className="relative">
+            <div key={idx} className="flex items-center justify-center mt-6">
+              <div>
+                <div className="absolute mt-[-10px] ml-[-10px] w-[30px] h-[30px] rounded-full bg-[#295cbe] flex items-center justify-center text-white font-bold shadow text-base">
+                  {idx + 1}
+                </div>
                 <img
                   src={movie.poster}
                   alt={movie.title}
                   className="w-[90px] h-[126px] object-cover rounded bg-white border border-gray-200"
                 />
-                <div className="absolute -top-3 -left-3 w-8 h-8 rounded-full bg-[#2f66cd] flex items-center justify-center text-white font-bold shadow text-lg">
-                  {idx + 1}
-                </div>
+                
               </div>
-              <div className="text-sm font-semibold text-[#333333] ml-4 leading-5">
+              <div className="text-sm font-bold text-[#1e1f24] ml-4 leading-5 break-words w-[110px] text-start">
                 {movie.title}
               </div>
             </div>
           ))}
+          </div>
+          
         </div>
       </div>
     </div>
