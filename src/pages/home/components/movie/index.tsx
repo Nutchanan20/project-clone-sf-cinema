@@ -142,9 +142,19 @@ export default function Movie() {
               US Box Office
             </button>
           </div>
-          <div>
+          <div className="border border-gray-500 mt-6">
             {boxOffice.map((boxOffice, index) => (
-              <img src={boxOffice.poster} className="h-32 w-24 mt-8"></img>
+              <div className="flex items-center justify-center mb-8">
+                <div>
+                  <div className="absolute bg-[#2d64cf] w-[30px] h-[30px] flex justify-center items-center rounded-full font-bold text-[#fff] mt-[-10px] ml-[-10px]">
+                    {index+1}
+                  </div>
+                  <img src={boxOffice.poster} className="h-[132px] w-[96px] object-cover"></img>
+                </div>
+                <div className="text-[#1e1f24] text-sm font-bold break-words w-[90px] ml-4">
+                  {boxOffice.name}
+                </div>
+              </div> 
             ))}
           </div>
         </div>
