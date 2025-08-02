@@ -133,7 +133,7 @@ export default function Movie() {
             Box Office
           </h1>
 
-          <div className="flex justify-center">
+          <div className="relative flex justify-center bg-[#F7F9FC] mx-3">
             <button className="text-[#939494] hover:text-[#2d64cf] focus:text-[#2d64cf] text-sm">
               SF Box Office
             </button>
@@ -142,9 +142,9 @@ export default function Movie() {
               US Box Office
             </button>
           </div>
-          <div className="border border-gray-500 mt-6">
+          <div className="border border-[#c6c7c7] mt-[-12px]">
             {boxOffice.map((boxOffice, index) => (
-              <div className="flex items-center justify-center mb-8">
+              <div className="flex items-center justify-center my-8">
                 <div>
                   <div className="absolute bg-[#2d64cf] w-[30px] h-[30px] flex justify-center items-center rounded-full font-bold text-[#fff] mt-[-10px] ml-[-10px]">
                     {index+1}
