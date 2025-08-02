@@ -13,8 +13,13 @@ import movie2 from "../../../../assets/pictures/movies/range/2movie.jpg";
 import movie3 from "../../../../assets/pictures/movies/range/3movie.jpg";
 import movie4 from "../../../../assets/pictures/movies/range/4movie.jpg";
 import movie5 from "../../../../assets/pictures/movies/range/5movie.jpg";
+import React, { useState } from "react";
+// ...existing code...
+import NewsletterPopup from "../../../../components/newsletter";
 
 export default function Movie() {
+  
+
   const categories = ["กำลังฉาย", "โปรแกรมหน้า", "กิจกรรมพิเศษ"];
   const movies = [
     {
@@ -134,40 +139,38 @@ export default function Movie() {
         <div>
           <img className="w-[255px] mt-3" src={F1} />
           <hr className="bg-gradient-to-r from-[#2f66cd] to-[#5ab6de] mt-5 h-1"></hr>
-          <h1 className="text-center font-black text-2xl text-[#333333] mt-5">
+          <h1 className="text-center font-black text-2xl text-[#333333] mt-4">
             {" "}
             Box Office
           </h1>
-          <div className="flex justify-center mt-5 space-x-4">
+          <div className="flex justify-center items-center mt-3 space-x-4 relative bg-[#F5F7FB] mx-3">
             <button className="text-[#989898] focus:text-[#2d64cf] hover:text-[#2d64cf] font-bold text-sm">
               SF Box Office
             </button>
-            <div className="text-[#989898]">|</div>
+            <div className="text-[#989898] ">|</div>
             <button className="text-[#989898] focus:text-[#2d64cf] hover:text-[#2d64cf] font-bold text-sm">
               US Box Office
             </button>
           </div>
-          <div className="border border-gray-200">
-          {boxOfficeMovies.map((movie, idx) => (
-            <div key={idx} className="flex items-center justify-center mt-6">
-              <div>
-                <div className="absolute mt-[-10px] ml-[-10px] w-[30px] h-[30px] rounded-full bg-[#295cbe] flex items-center justify-center text-white font-bold shadow text-base">
-                  {idx + 1}
+          <div className="border border-[#c6c7c7] mt-[-12px]">
+            {boxOfficeMovies.map((movie, idx) => (
+              <div key={idx} className="flex items-center justify-center my-7">
+                <div>
+                  <div className="absolute mt-[-10px] ml-[-10px] w-[30px] h-[30px] rounded-full bg-[#295cbe] flex items-center justify-center text-white font-bold shadow text-base">
+                    {idx + 1}
+                  </div>
+                  <img
+                    src={movie.poster}
+                    alt={movie.title}
+                    className="w-[90px] h-[126px] object-cover rounded bg-white border border-gray-200"
+                  />
                 </div>
-                <img
-                  src={movie.poster}
-                  alt={movie.title}
-                  className="w-[90px] h-[126px] object-cover rounded bg-white border border-gray-200"
-                />
-                
+                <div className="text-sm font-bold text-[#1e1f24] ml-4 leading-5 break-words w-[110px] text-start">
+                  {movie.title}
+                </div>
               </div>
-              <div className="text-sm font-bold text-[#1e1f24] ml-4 leading-5 break-words w-[110px] text-start">
-                {movie.title}
-              </div>
-            </div>
-          ))}
+            ))}
           </div>
-          
         </div>
       </div>
     </div>
