@@ -3,6 +3,8 @@ import Movie from "./components/movie";
 import Search from "./components/search";
 import React, { useState } from "react";
 import NewsletterPopup from "../../components/newsletter";
+import IconSend from "../../assets/pictures/ic_send.svg";
+
 
 export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
@@ -17,17 +19,24 @@ export default function Home() {
       <div className="mt-11 w-[65%] mx-auto">
         <Movie></Movie>
       </div>
-      <div className="flex items-end justify-end">
-        {/* Not clicked: popup hidden */}
+      <div className="fixed top-0 left-0 w-full h-full flex items-end justify-end">
         <button
           onClick={() => setShowPopup(true)}
-          className="bg-blue-500 text-white px-4 py-2 rounded"
+          className="px-5 py-3 w-[340px] flex justify-center items-center rounded-lg  bg-white"
         >
-          คลิกเพื่อดูรายละเอียด
+          <div className="flex-1 flex justify-center">
+            <div className="flex items-center gap-2">
+              <span>
+                <img src={IconSend} alt="icon-send" className="w-5 h-5" />
+              </span>
+              <span className="text-[#2d64cf] font-bold">
+                คลิกเพื่อรับข่าวสารจาก SF
+              </span>
+            </div>
+          </div>
+          <div className="text-[#9B9B9B] text-2xl ml-4">×</div>
         </button>
-        {/* Clicked: popup shown */}
         {showPopup && <NewsletterPopup onClose={() => setShowPopup(false)} />}
-        {/* ...rest of your page... */}
       </div>
     </div>
   );
