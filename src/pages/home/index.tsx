@@ -19,7 +19,7 @@ export default function Home() {
       <div className="mt-11 w-[65%] mx-auto">
         <Movie></Movie>
       </div>
-      <div className="fixed top-0 left-0 w-full h-full flex items-end justify-end">
+      <div className="fixed bottom-0 right-0 flex items-end justify-end">
         <button
           onClick={() => setShowPopup(true)}
           className="px-5 py-3 w-[340px] flex justify-center items-center rounded-lg  bg-white"

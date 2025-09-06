@@ -9,7 +9,7 @@ const NewsletterPopup: React.FC<NewsletterPopupProps> = ({ onClose }) => {
   const [email, setEmail] = useState("");
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full flex items-end justify-end">
+    <div className="fixed bottom-0 right-0 flex items-end justify-end">
       <div className="bg-white rounded-lg shadow-2xl w-[340px] relative">
         <button
           onClick={onClose}
