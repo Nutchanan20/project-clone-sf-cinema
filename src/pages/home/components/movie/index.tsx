@@ -13,6 +13,10 @@ import Guardian from "../../../../assets/pictures/movies/guardian.jpg";
 import Horse from "../../../../assets/pictures/movies/spirit.jpg";
 import Ferdinand from "../../../../assets/pictures/movies/ferdinand.jpg";
 import Madagascar from "../../../../assets/pictures/movies/madagascar.jpg";
+import Dragon1 from "../../../../assets/pictures/movies/dragonMovie.jpg";
+import Dragon2 from "../../../../assets/pictures/movies/dragon.jpg";
+import Dragon3 from "../../../../assets/pictures/movies/dragon2.jpg";
+
 export default function Movie() {
   const categories = ["กำลังฉาย", "โปรแกรมหน้า", "กิจกรรมพิเศษ"];
   const movies = [
@@ -60,6 +64,21 @@ export default function Movie() {
       poster: Mufasa,
       date: "09-09-2024",
       title: "Mufasa",
+    },
+    {
+      poster: Dragon1,
+      date: "10-10-2024",
+      title: "How to train your dragon",
+    },
+    {
+      poster: Dragon2,
+      date: "11-11-2024",
+      title: "How to train your dragon 2",
+    },
+    {
+      poster: Dragon3,
+      date: "12-12-2024",
+      title: "How to train your dragon 3",
     },
   ];
   const boxOffice = [
