@@ -4,6 +4,8 @@ import Search from "./components/search";
 import Newsletter from "../../components/newsletter";
 import Plane from "../../components/newsletter/PaperPlane.svg";
 import { useState } from "react";
+import Sponsor from "./components/sponsor";
+import Promotion from "./components/promotion";
 
 export default function Home() {
   const [showPopUp, setShowPopUp] = useState(false);
@@ -18,6 +20,12 @@ export default function Home() {
       </div>
       <div className="mt-11 w-[65%] mx-auto">
         <Movie></Movie>
+      </div>
+      <div>
+        <Sponsor></Sponsor>
+      </div>
+      <div>
+        <Promotion></Promotion>
       </div>
       <div className="fixed bottom-0 right-0 w-[336px] shadow-md">
         <button
