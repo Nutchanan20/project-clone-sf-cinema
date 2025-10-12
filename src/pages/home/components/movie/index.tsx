@@ -13,9 +13,6 @@ import movie2 from "../../../../assets/pictures/movies/range/2movie.jpg";
 import movie3 from "../../../../assets/pictures/movies/range/3movie.jpg";
 import movie4 from "../../../../assets/pictures/movies/range/4movie.jpg";
 import movie5 from "../../../../assets/pictures/movies/range/5movie.jpg";
-import React, { useState } from "react";
-// ...existing code...
-import NewsletterPopup from "../../../../components/newsletter";
 
 export default function Movie() {
   
@@ -66,6 +63,18 @@ export default function Movie() {
       poster: Mufasa,
       date: "09-09-2024",
       title: "Mufasa",
+    },
+    {
+      poster: movie1,
+      title: "จูราสสิค เวิลด์",
+    },
+    {
+      poster: movie2,
+      title: "F1 เดอะ มูฟวี่",
+    },
+    {
+      poster: movie3,
+      title: "อภินิหารไวกิ้งพิชิตมังกร",
     },
   ];
   const boxOfficeMovies = [

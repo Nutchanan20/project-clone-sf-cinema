@@ -4,6 +4,8 @@ import Search from "./components/search";
 import React, { useState } from "react";
 import NewsletterPopup from "../../components/newsletter";
 import IconSend from "../../assets/pictures/ic_send.svg";
+import Sponsor from "./components/sponsor";
+import Promotion from "./components/promotion";
 
 
 export default function Home() {
@@ -18,6 +20,12 @@ export default function Home() {
       </div>
       <div className="mt-11 w-[65%] mx-auto">
         <Movie></Movie>
+      </div>
+      <div>
+        <Sponsor></Sponsor>
+      </div>
+      <div>
+        <Promotion></Promotion>
       </div>
       <div className="fixed bottom-0 right-0 flex items-end justify-end">
         <button
