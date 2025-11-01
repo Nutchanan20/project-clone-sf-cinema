@@ -7,7 +7,6 @@ import combo from "../promotion/photo/combo.jpg";
 import popcorn from "../promotion/photo/popcorn.png";
 import LineCup from "../promotion/photo/cup-combo-set.jpg";
 export default function Promotion() {
-  const categories = ["กำลังฉาย", "โปรแกรมหน้า", "กิจกรรมพิเศษ"];
   const promotion = [
     {
       poster: corn,
@@ -53,7 +52,7 @@ export default function Promotion() {
     },
   ];
   return (
-    <div>
+    <div className="bg-white">
       <div className="bg-gradient-to-r from-[#005ea8] to-[#498ac4] h-[300px] w-full">
         <div className="flex justify-center items-center flex-col gap-3 py-14">
           <div className="text-white font-bold text-2xl">โปรโมชั่นสุดพิเศษ</div>
@@ -61,25 +60,30 @@ export default function Promotion() {
             โปรโมชั่นสุดพิเศษ สำหรับคนรักการชมภาพยนตร์
           </div>
         </div>
-        <div className="w-[1240px] h-[1201px] mx-auto bg-white">
-          <div className="grid grid-cols-4 justify-items-center px-7 py-10">
-            {promotion.map((promotion, index) => (
-              <div className="py-4">
-                <img
-                  className="h-[357px] w-[255px] shadow-lg"
-                  src={promotion.poster}
-                ></img>
-                <div className="text-[#2d64cf] text-sm my-4 font-bold break-words w-[255px]">
-                  {promotion.heading}
+        </div>
+        <div className="w-[1240px] h-[1201px] mx-auto bg-white -mt-32">
+          <div className="bg-white w-full h-full">
+            <div className="grid grid-cols-4 justify-items-center px-7 py-10">
+              {promotion.map((promotion, index) => (
+                <div className="py-4">
+                  <img
+                    className="h-[357px] w-[255px] shadow-lg"
+                    src={promotion.poster}
+                  ></img>
+                  <div className="text-[#2d64cf] text-sm my-4 font-bold break-words w-[255px]">
+                    {promotion.heading}
+                  </div>
+                  <div className="text-sm text-[#1e1f24] mb-2">
+                    {promotion.title}
+                  </div>
                 </div>
-                <div className="text-sm text-[#1e1f24] mb-2">
-                  {promotion.title}
-                </div>
-              </div>
-            ))}
+              ))}
+            </div>
+            <div className="flex justify-center">
+              <button className="border border-[#1e1f24] border-opacity-40 w-[1140px] h-[58px] hover:text-[#23527c] font-semibold rounded-md">โปรโมชั่นทั้งหมด</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
   );
 }
