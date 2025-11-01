@@ -53,7 +53,7 @@ export default function Promotion() {
     },
   ];
   return (
-    <div>
+    <div className="bg-white">
       <div className="bg-gradient-to-r from-[#005ea8] to-[#498ac4] to-75% w-full h-[300px]">
         <div className="flex justify-center text-white items-center flex-col gap-2 py-16">
           <div className="text-[26px] font-bold">โปรโมชั่นสุดพิเศษ</div>
@@ -61,10 +61,11 @@ export default function Promotion() {
             โปรโมชั่นสุดพิเศษ สำหรับคนรักการชมภาพยนตร์เช่นคุณ
           </div>
         </div>
-        <div className="w-[1240px] h-[1202.06px] bg-white mx-auto">
+        </div>
+        <div className="w-[1240px] h-[1202.06px] bg-white mx-auto -mt-24">
           <div className="grid grid-cols-4 justify-items-center mx-[30px] py-[30px]">
             {promotions.map((promotion, index) => (
-              <div className="mx-[20px] py-[20px]">
+              <div className="mx-[20px] py-[20px] cursor-pointer">
                 <img
                   className="h-[357px] w-[255px] shadow-lg"
                   src={promotion.poster}
@@ -79,8 +80,12 @@ export default function Promotion() {
               </div>
             ))}
           </div>
+          <div className="flex justify-center">
+            <button className="w-[1140px] h-[58px] font-medium rounded-md border border-[#1e1f24] border-opacity-50 text-[#1e1f24] hover:text-[#23527c]">
+              โปรโมชั่นทั้งหมด
+            </button>
+          </div>
         </div>
       </div>
-    </div>
   );
 }
