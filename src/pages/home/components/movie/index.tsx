@@ -147,7 +147,7 @@ export default function Movie() {
 
         <div>
           <img className="w-60 h-max mt-3" src={F1}></img>
-          <hr className="bg-gradient-to-r from-[#2f66cd] to-[#5ab6de] mt-9 h-[4.5px]"></hr>
+          <hr className=" mbg-gradient-to-r from-[#2f66cd] to-[#5ab6de]t-9 h-[4.5px]"></hr>
           <h1 className="mt-4 text-2xl text-center font-black text-[#333333]">
             Box Office
           </h1>
