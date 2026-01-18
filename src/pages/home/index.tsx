@@ -7,6 +7,7 @@ import IconSend from "../../assets/pictures/ic_send.svg";
 import Sponsor from "./components/sponsor";
 import Promotion from "./components/promotion";
 import News from "./components/news";
+import Footer from "./components/footer";
 
 export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
@@ -29,6 +30,9 @@ export default function Home() {
       </div>
       <div>
         <News></News>
+      </div>
+            <div>
+        <Footer></Footer>
       </div>
 
       <div className="fixed bottom-0 right-0 flex items-end justify-end">
