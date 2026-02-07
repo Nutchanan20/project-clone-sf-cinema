@@ -2,6 +2,11 @@ import Emprive from "./photo/emprive.png";
 import SfO from "./photo/sfO.png";
 import SfW from "./photo/sfW.png";
 import SfX from "./photo/sfX.png";
+import Facebook from "./photo/facebook_icon.png"
+import X from "./photo/X_icon.png"
+import Instargram from "./photo/instargram_icon.png"
+import Youtube from "./photo/youtube_icon.png"
+import Line from "./photo/line_icon.png"
 
 export default function Footer() {
   const brandList = [Emprive, SfW, SfX, SfO];
@@ -31,6 +36,28 @@ export default function Footer() {
      link: "https://www.sfcinemacity.com/sfpdpa/th/policy.html"
     },
   ];
+  const SocialMedia = [
+    {
+      Icon: Facebook,
+      Openlink: "https://www.facebook.com/SFcinema"
+    },
+    {
+      Icon: X,
+      Openlink: "https://x.com/WeLoveSF"
+    },
+    {
+      Icon: Instargram,
+      Openlink: "https://www.instagram.com/welove_sf"
+    },
+    {
+      Icon: Youtube,
+      Openlink: "https://www.youtube.com/WeLoveSF"
+    },
+    {
+      Icon: Line,
+      Openlink: "https://page.line.me/sfy4772y?openQrModal=true"
+    },
+  ];
   return (
     <div className="w-full h-[318.35px]">
       <div
@@ -43,7 +70,7 @@ export default function Footer() {
       </div>
       <div className="w-full h-[175.7px] bg-[#1e1f24]">
         <div className="pt-[55px]">
-          <div id="footbar" className="mx-[175.4px] px-[15px] flex justify-between">
+          <div id="footbar-top" className="mx-[175.4px] px-[15px] flex justify-between">
             <div id="footbar-menu" >
               <ul className="text-[#fff] flex gap-x-[20px]">
                 {menu.map((footbarMenu, index) => (
@@ -57,6 +84,22 @@ export default function Footer() {
             </div>
             <div id="footbar-sf-number">
                 <h2 className="font-extrabold text-[#fff]">SF Smart Call: 1349</h2>
+            </div>
+          </div>
+          <div id="footbar-bottom" className="mx-[175.4px] px-[15px] flex justify-between mt-[12px]">
+            <div id="footbar-copyright" >
+              <h1 className="text-[#fff]">Copyright © 2023 SF Group. All rights reserved.</h1>
+            </div>
+            <div id="footbar-social">
+                <ul className="text-[#fff] flex gap-x-[10px]">
+                {SocialMedia.map((Social, index) => (
+                  <li>
+                    <a href={Social.Openlink}>
+                      <img src={Social.Icon} className="h-6"></img>
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
